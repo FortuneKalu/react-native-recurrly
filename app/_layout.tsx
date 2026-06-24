@@ -16,10 +16,10 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (fontsLoaded) {
+    if (fontsLoaded || fontsError) {
       SplashScreen.hideAsync();
     }
-  }, [fontsError]);
+  }, [fontsLoaded, fontsError]);
 
   if (!fontsLoaded && !fontsError) {
     return null;
